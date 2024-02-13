@@ -1,0 +1,97 @@
+---
+import ProjectItems from './ProjectItems.astro';
+import AWSIcon from '../icons/AWS.astro';
+import ExpressjsIcon from '../icons/ExpressJs.astro';
+import FirebaseIcon from '../icons/Firebase.astro';
+import SequelizeIcon from '../icons/Sequelize.astro';
+import NestjsIcon from '../icons/NestJs.astro';
+import NextjsIcon from '../icons/NextJs.astro';
+import PostgresqlIcon from '../icons/Postgresql.astro';
+import TypescriptIcon from '../icons/Typescript.astro';
+import TypeormIcon from '../icons/Typeorm.astro';
+
+const TAGS = {
+	AWS: {
+		name: 'AWS',
+		icon: AWSIcon,
+		class: 'bg-[#FF9900]',
+	},
+	EXPRESS: {
+		name: 'ExpressJs',
+		icon: ExpressjsIcon,
+		class: 'bg-black',
+	},
+	FIREABSE: {
+		name: 'Firebase',
+		icon: FirebaseIcon,
+		class: 'bg-[#F5820D]',
+	},
+	SEQUELIZE: {
+		name: 'Sequelize',
+		icon: SequelizeIcon,
+		class: 'bg-[#46d2f3]',
+	},
+	NEST: {
+		name: 'NestJs',
+		icon: NestjsIcon,
+		class: 'bg-[#b81919]',
+	},
+	NEXT: {
+		name: 'NextJs',
+		icon: NextjsIcon,
+		class: 'bg-black',
+	},
+	POSTGRES: {
+		name: 'Postgresql',
+		icon: PostgresqlIcon,
+		class: 'bg-[#31a0f3]',
+	},
+	TYPESCRIPT: {
+		name: 'Typescript',
+		icon: TypescriptIcon,
+		class: 'bg-[#3178c6]',
+	},
+	TYPEORM: {
+		name: 'Typeorm',
+		icon: TypeormIcon,
+		class: 'bg-black',
+	},
+};
+
+const PROJECTS = [
+	{
+		title: 'Typeland - Played',
+		description:
+			'In this application users can create padel matches with certain requirements, which can be joined by users who meet the following conditions. Once the match is over, users can rate each other. Also It have push-notifications system.',
+		img: '../../public/played.jpg',
+		altImg: 'Played',
+		link: 'https://play.google.com/store/apps/details?id=com.played.padel&pli=1',
+		tags: [TAGS.NEXT, TAGS.FIREABSE, TAGS.TYPESCRIPT],
+	},
+	{
+		title: 'Typeland - LKIMI',
+		description:
+			'A video game style application, which consists of a three-dimensional, online virtual world where users can interact with each other, while at the same time accessing the content of the different personal development classes that LKMI offers its clients.',
+		img: '../../public/wip.jpg',
+		altImg: 'LKIMI',
+		link: '',
+		tags: [TAGS.EXPRESS, TAGS.AWS, TAGS.POSTGRES, TAGS.SEQUELIZE, TAGS.TYPESCRIPT],
+	},
+	{
+		title: 'E-commerce (backend)',
+		description:
+			'This e-commerce backend project dives deep into the technical realm, showcasing the power of clean architecture and cutting-edge technologies. Its not just about functionality; its about building a robust, scalable, and maintainable foundation for any online store.',
+		img: '../../public/nest-ecommerce.jpg',
+		link: 'https://github.com/LksR-dev/nest-ecommerce',
+		tags: [TAGS.NEST, TAGS.AWS, TAGS.POSTGRES, TAGS.TYPESCRIPT, TAGS.TYPEORM],
+	},
+];
+---
+
+<div class='grid grid-cols-1 md:grid-cols-2 gap-20 max-w-sm md:max-w-full'>
+	{
+		PROJECTS.map((project) => {
+			return <ProjectItems {...project} />;
+		})
+	}
+</div>
