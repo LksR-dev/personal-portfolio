@@ -1,0 +1,41 @@
+---
+import ExperienceItem from './ExperienceItems.astro';
+const EXPERIENCE = [
+	{
+		title: 'Datalitica',
+		date: 'January 2024 - Currently',
+		subject: 'IT Company',
+		description:
+			"Fullstack developer (focused on Backend) developing mobile and web applications for various clients. Participate in client meetings with the team and in decision making. Work on the architecture of applications from scratch, implementation of functionality and API's, and maintain existing functionality.",
+		link: 'https://www.datalitica.com.ar/',
+	},
+	{
+		title: 'Typeland',
+		date: 'February 2023 - October 2023',
+		subject: 'IT Company',
+		description:
+			'Backend Developer, developing a backend service for the aplicattions. Participe in SCRUM cereomonies and customer technical consultations. Autonomous problem solving skills.',
+		link: 'https://typeland.tech/',
+	},
+	{
+		title: 'APX',
+		date: 'July 2022 - January 2023.',
+		subject: 'EdTech web development platform.',
+		description:
+			'I was involved in activities such as, code review, pair programming, lectures, constant communication with students and guiding students in the learning process, which they will receive during the course and supervising that the expected results are obtained.',
+		link: 'https://apx.school/',
+	},
+];
+---
+
+<ol class='relative border-s border-gray-200 dark:border-gray-700 ml-3'>
+	{
+		EXPERIENCE.map((experience) => {
+			return (
+				<li class='mb-10 ms-4'>
+					<ExperienceItem {...experience} />
+				</li>
+			);
+		})
+	}
+</ol>
